@@ -2,6 +2,7 @@ package com.carlos.person_management_app.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "person")
 public class PersonModel {
@@ -18,6 +20,6 @@ public class PersonModel {
     private String fullName;
     private Date birthDate;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "person")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<AddressModel> addresses;
 }

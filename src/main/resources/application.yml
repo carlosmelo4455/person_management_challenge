@@ -2,12 +2,12 @@ spring:
   application:
     name: person_management_app
   datasource:
-    url: jdbc:postgresql://localhost:5432/management
+    url: jdbc:postgresql://localhost:5432/person_management
     username: postgres
     password: root
     driver-class-name: org.postgresql.Driver
   jpa:
-    open-in-view: false
+    open-in-view: true
     hibernate:
       ddl-auto: update
     defer-datasource-initialization: true

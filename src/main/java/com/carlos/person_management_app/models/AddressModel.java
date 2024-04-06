@@ -19,7 +19,6 @@ public class AddressModel {
     private String city;
     private String state;
     private boolean isMain;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "person_id")
     private PersonModel person;

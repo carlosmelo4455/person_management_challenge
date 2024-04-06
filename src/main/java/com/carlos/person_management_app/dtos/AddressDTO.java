@@ -1,21 +1,18 @@
-package com.carlos.person_management_app.business.entities;
+package com.carlos.person_management_app.dtos;
 
-import lombok.AllArgsConstructor;
+import com.carlos.person_management_app.business.entities.Person;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-public class Address {
+public class AddressDTO {
     private Long id;
     private String street;
     private String zipCode;
     private String number;
     private String city;
     private String state;
-    private Boolean isMain = false;
+    private Boolean isMain;
     private Person person;
 }

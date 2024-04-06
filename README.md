@@ -4,6 +4,8 @@
 
 Este projeto é uma API REST para gerenciamento de pessoas e seus endereços. A API permite criar, editar e consultar uma ou mais pessoas, bem como criar, editar e consultar um ou mais endereços de uma pessoa. Além disso, é possível indicar qual endereço será considerado o principal de uma pessoa.
 
+### O diagrama está dentro do código-fonte
+
 ## Tecnologias Utilizadas
 
 - Java

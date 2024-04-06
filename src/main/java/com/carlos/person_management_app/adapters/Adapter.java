@@ -14,8 +14,7 @@ public class Adapter {
         return mapper.map(source, targetClass);
     }
 
-    public <Type> Type updateTargetWithSource(Type source, Type target) {
+    public <Type> void updateTargetWithSource(Type source, Type target) {
         mapper.map(source, target);
-        return target;
     }
 }

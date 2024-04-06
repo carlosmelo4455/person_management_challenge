@@ -1,5 +1,6 @@
-package com.carlos.person_management_app.dtos;
+package com.carlos.person_management_app.dtos.person;
 
+import com.carlos.person_management_app.dtos.address.AddressUserDTO;
 import lombok.Getter;
 import lombok.Setter;
 

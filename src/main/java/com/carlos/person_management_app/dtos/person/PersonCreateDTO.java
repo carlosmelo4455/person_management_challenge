@@ -1,5 +1,6 @@
-package com.carlos.person_management_app.dtos;
+package com.carlos.person_management_app.dtos.person;
 
+import com.carlos.person_management_app.dtos.address.AddressCreateDTO;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.carlos.person_management_app.dtos;
+package com.carlos.person_management_app.dtos.address;
 
 import lombok.Getter;
 import lombok.Setter;

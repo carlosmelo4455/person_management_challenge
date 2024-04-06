@@ -1,7 +1,8 @@
 package com.carlos.person_management_app.configs;
 
 import com.carlos.person_management_app.business.entities.Person;
-import com.carlos.person_management_app.dtos.PersonCreateDTO;
+import com.carlos.person_management_app.dtos.person.PersonCreateDTO;
+import com.carlos.person_management_app.dtos.person.PersonEditDTO;
 import com.carlos.person_management_app.models.PersonModel;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
@@ -32,6 +33,8 @@ public class MapperConfig {
         };
         mapper.createTypeMap(PersonCreateDTO.class, Person.class)
                 .addMappings(mapping -> mapping.using(toDate).map(PersonCreateDTO::getBirthDate, Person::setBirthDate));
+        mapper.createTypeMap(PersonEditDTO.class, Person.class)
+                .addMappings(mapping -> mapping.using(toDate).map(PersonEditDTO::getBirthDate, Person::setBirthDate));
 
         // Converter de PersonModel para Person
         Converter<Date, Date> toSameDate = MappingContext::getSource;

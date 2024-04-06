@@ -56,9 +56,5 @@ Para executar o projeto localmente, você precisa ter o Java e o Maven instalado
 
 A API estará disponível em `http://localhost:8080`.
 
-## Links
-
-- [Código Fonte](#)
-- [API Live](#)
 
 Por favor, substitua os links de código-fonte e API Live pelos links reais do seu projeto.

@@ -12,5 +12,5 @@ public class AddressUserDTO {
     private String number;
     private String city;
     private String state;
-
+    private Boolean isMain;
 }

@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
 @RequiredArgsConstructor
 @Service
@@ -36,7 +37,16 @@ public class AddressService {
         AddressModel addressModel = adapter.mapSourceToTarget(addressEntity, AddressModel.class);
         addressRepository.save(addressModel);
         personEntity.addAddress(addressEntity);
-        personRepository.save(adapter.mapSourceToTarget(personEntity, PersonModel.class));
+        PersonModel personModelUpdated = adapter.mapSourceToTarget(personEntity, PersonModel.class);
+        if (addressModel.isMain()) {
+            for (AddressModel address : personModelUpdated.getAddresses()) {
+                if (!Objects.equals(address.getId(), addressModel.getId())) {
+                    address.setMain(false);
+                }
+            }
+            personModelUpdated.setMainAddress(addressModel);
+        }
+        personRepository.save(personModelUpdated);
         return adapter.mapSourceToTarget(addressModel, AddressDTO.class);
     }
 

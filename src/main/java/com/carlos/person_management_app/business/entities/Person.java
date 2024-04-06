@@ -17,6 +17,7 @@ public class Person {
     private Long id;
     private String fullName;
     private Date birthDate;
+    private Address mainAddress;
     private List<Address> addresses = new ArrayList<>();
 
     public void addAddress(Address address) {

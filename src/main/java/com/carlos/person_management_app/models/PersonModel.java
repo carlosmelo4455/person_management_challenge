@@ -19,6 +19,10 @@ public class PersonModel {
     private Long id;
     private String fullName;
     private Date birthDate;
+    @OneToOne(cascade = CascadeType.ALL)
+    private AddressModel mainAddress;
+
+
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<AddressModel> addresses;

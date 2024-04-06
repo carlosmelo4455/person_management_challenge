@@ -27,8 +27,10 @@ public class PersonService {
     private final AddressService addressService;
 
     public PersonDTO create(PersonCreateDTO personCreateDTO) throws NotFoundException {
-        PersonModel personModel = adapter.mapSourceToTarget(personCreateDTO, PersonModel.class);
+        Person person = adapter.mapSourceToTarget(personCreateDTO, Person.class);
+        PersonModel personModel = adapter.mapSourceToTarget(person, PersonModel.class);
         personRepository.save(personModel);
+        personCreateDTO.getAddress().setIsMain(true);
         addressService.create(personCreateDTO.getAddress(), personModel.getId());
         PersonModel personModelUpdated = personRepositoryImpl.findById(personModel.getId());
         return adapter.mapSourceToTarget(personModelUpdated, PersonDTO.class);

@@ -4,13 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-
 @AllArgsConstructor
 @Getter
 @Setter
-public class Person {
+public class Address {
     private Long id;
-    private String fullName;
-    private Date birthDate;
+    private String street;
+    private String zipCode;
+    private String number;
+    private String city;
+    private String state;
+    private String isMain;
 }

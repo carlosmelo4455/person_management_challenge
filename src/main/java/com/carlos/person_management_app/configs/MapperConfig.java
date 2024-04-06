@@ -3,6 +3,7 @@ package com.carlos.person_management_app.configs;
 import com.carlos.person_management_app.business.entities.Person;
 import com.carlos.person_management_app.dtos.person.PersonCreateDTO;
 import com.carlos.person_management_app.dtos.person.PersonEditDTO;
+import com.carlos.person_management_app.exceptions.ParseDataException;
 import com.carlos.person_management_app.models.PersonModel;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
@@ -28,7 +29,11 @@ public class MapperConfig {
             try {
                 return new SimpleDateFormat("dd/MM/yyyy").parse(ctx.getSource());
             } catch (ParseException e) {
-                throw new RuntimeException(e);
+                try {
+                    throw ParseDataException.create("Person", "birthDate");
+                } catch (ParseDataException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         };
         mapper.createTypeMap(PersonCreateDTO.class, Person.class)

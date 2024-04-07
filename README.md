@@ -36,6 +36,8 @@ Para executar o projeto localmente, você precisa ter o Java e o Maven instalado
 
 1. Clone o repositório
 2. Navegue até o diretório do projeto
-3. Execute o comando `mvn spring-boot:run`
+3. Abra o arquivo `application.yml` e configure as propriedades `spring.datasource.url`, `spring.datasource.username` e `spring.datasource.password` com as informações do seu banco de dados PostgreSQL
+4. Execute o comando `mvn clean install`
+5. Execute o comando `mvn spring-boot:run`
 
 A API estará disponível em `http://localhost:8080`.
